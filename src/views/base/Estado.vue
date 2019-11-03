@@ -22,10 +22,6 @@
               <b-card-body>
                 <form @submit.prevent="gravar()">
                 <b-form-group>
-                  <label for="id">Id</label>
-                  <b-form-input type="text" id="id" placeholder="informe o id do estado" v-model="estado.id"></b-form-input>
-                </b-form-group>
-                <b-form-group>
                   <label for="nome">Nome</label>
                   <b-form-input type="text" id="nome" placeholder="informe o nome do estado" v-model="estado.nome"></b-form-input>
                 </b-form-group>
@@ -61,7 +57,7 @@ export default {
   },
   methods: {
     gravar () {
-      this.$http.post('http://localhost:8081/estados', this.estado)
+      this.$api.estados.save({}, this.estado)
         .then(() => this.estado = new Estado(), err => console.log(err));
     }
   }
