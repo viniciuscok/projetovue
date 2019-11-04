@@ -54,8 +54,26 @@
                           </b-col>
                           <b-col sm="4">
                             <b-form-group>
-                              <label for="pacientePeso">Peso</label>
-                              <b-form-input type="text" id="pacientePeso" placeholder="informe o peso do paciente" v-model="estado.sigla" ></b-form-input>
+                              <label for="pacienteLeito">Leito</label>
+                              <b-form-input type="text" id="pacienteLeito" placeholder="Leito do paciente" v-model="estado.sigla" ></b-form-input>
+                            </b-form-group>  
+                          </b-col>
+                          <b-col sm="4">
+                            <b-form-group>
+                              <label for="pacientePesoNacimento">Peso Nascimento</label>
+                              <b-form-input type="text" id="pacientePesoNacimento" placeholder="peso nascimento" v-model="estado.sigla" ></b-form-input>
+                            </b-form-group>  
+                          </b-col>
+                          <b-col sm="4">
+                            <b-form-group>
+                              <label for="pacientePesoOntem">Peso Ontem</label>
+                              <b-form-input type="text" id="pacientePesoOntem" placeholder="peso ontem" v-model="estado.sigla" ></b-form-input>
+                            </b-form-group>  
+                          </b-col>
+                          <b-col sm="4">
+                            <b-form-group>
+                              <label for="pacientePesoHoje">Peso Hoje</label>
+                              <b-form-input type="text" id="pacientePesoHoje" placeholder="peso hoje" v-model="estado.sigla" ></b-form-input>
                             </b-form-group>  
                           </b-col>
                           <b-col sm="3">
@@ -187,18 +205,48 @@
                     </b-tabs>
                   </b-tab>  
                     <b-tab title="Mae">
-                      <b-form-group>
-                        <label for="id">Id</label>
-                        <b-form-input type="text" id="id" placeholder="informe o id do estado" v-model="estado.id"></b-form-input>
+                      <b-form-group v-show="false">
+                        <label for="maeId">Id</label>
+                        <b-form-input type="text" id="maeId" v-model="estado.id"></b-form-input>
                       </b-form-group>
-                      <b-form-group>
-                        <label for="nome">Nome</label>
-                        <b-form-input type="text" id="nome" placeholder="informe o nome da Mãe" v-model="estado.nome"></b-form-input>
-                      </b-form-group>
-                      <b-form-group>
-                        <label for="sigla">Sigla</label>
-                        <b-form-input type="text" id="sigla" placeholder="informe a sigla do estado" v-model="estado.sigla" ></b-form-input>
-                      </b-form-group>
+                      <b-row>
+                        <b-col sm="12">
+                          <b-form-group>
+                            <label for="maeNome">Nome</label>
+                            <b-form-input type="text" id="maeNome" placeholder="informe o nome da Mãe" v-model="estado.nome"></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                        <b-col sm="4">
+                          <b-form-group>
+                            <label for="maeDataNascimento">Data de Nascimento</label>
+                            <b-form-input type="date" id="maeDataNascimento" v-model="estado.nome"></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                        <b-col sm="4">
+                          <b-form-group>
+                            <label for="maeGesta">Gesta</label>
+                            <b-form-input type="text" id="maeGesta" placeholder="Mãe gesta" v-model="estado.sigla" ></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                        <b-col sm="4">
+                          <b-form-group>
+                            <label for="maeGesta">Gesta</label>
+                            <b-form-input type="text" id="maeGesta" placeholder="Mãe gesta" v-model="estado.sigla" ></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                        <b-col sm="4">
+                          <b-form-group>
+                            <label for="maeGesta">Gesta</label>
+                            <b-form-input type="text" id="maeGesta" placeholder="Mãe gesta" v-model="estado.sigla" ></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                        <b-col sm="4">
+                          <b-form-group>
+                            <label for="maeGesta">Gesta</label>
+                            <b-form-input type="text" id="maeGesta" placeholder="Mãe gesta" v-model="estado.sigla" ></b-form-input>
+                          </b-form-group>
+                        </b-col>
+                      </b-row>  
                     </b-tab>
                     <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
                   </b-tabs>

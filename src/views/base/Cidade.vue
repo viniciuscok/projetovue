@@ -21,9 +21,9 @@
             <b-collapse id="collapse1" visible>
               <b-card-body>
                 <form @submit.prevent="gravar()">
-                <b-form-group>
+                <b-form-group v-show="false">
                   <label for="id">Id</label>
-                  <b-form-input type="text" id="id" placeholder="informe o id da cidade" v-model="cidade.id"></b-form-input>
+                  <b-form-input type="text" id="id" v-model="cidade.id"></b-form-input>
                 </b-form-group>
                 <b-form-group>
                   <label for="nome">Nome</label>
@@ -31,7 +31,7 @@
                 </b-form-group>
                 <b-form-group label="Select" label-for="basicSelect" :label-cols="3">
                   <b-form-select id="basicSelect" :plain="true" v-model="cidade.estado">
-                    <option v-for="estado of estados" value="cidade.estado.nome">
+                    <option v-for="estado of estados" :value="estado">
                       {{ estado.nome }}
                     </option>
                   </b-form-select>
@@ -67,12 +67,12 @@ export default {
   },
   methods: {
     gravar () {
-      this.$http.post('http://localhost:8081/cidades', this.cidade)
+      this.$http.post('https://app-4neo.herokuapp.com/cidades', this.cidade)
         .then(() => this.cidade = new Cidade(), err => console.log(err));
     }
   },
   created () {
-     this.$http.get('http://localhost:8081/estados')
+     this.$http.get('https://app-4neo.herokuapp.com/estados')
       .then(res => res.json())
       .then(estados => this.estados = estados, err => console.log(err));
       console.log('teste teste'+estados);
